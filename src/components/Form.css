@@ -1,0 +1,191 @@
+
+.icons {
+    display: inline-block;
+    position:fixed;
+    width: 60px;
+    background-color: rgb(181, 231, 189) !important;
+    padding: 540px;
+    
+    
+  }
+  .appoint{
+    position: relative;
+    left: 285px;
+  }
+ 
+  .icons1{
+    position: relative;
+    left: -22px;
+    
+
+  }
+  .icons i {
+    padding: 20px 0 10px 10px;
+    font-size: 22px;
+    color: white;
+    display: inline-block;
+  }
+  
+  
+  .flex-container{
+    display: flex;
+  }
+  .textname{
+    border-radius: 60%;
+    width: 145px;
+    margin-left: 85%;
+    margin-top:10px;
+    height:45px;
+    font-weight: bold;
+  }
+  .picture{
+      border-radius: 60%;
+      width: 50px;
+      height:45px;
+     }
+    .form-control1{
+         width: 110% !important;
+         position: relative;
+         left: -16px;
+         padding: 7px;
+         text-align: left;
+
+     }
+     .dropdown-menu{
+         text-align: left;
+     }
+     .form-control2 {
+        width: 101% !important;
+        position: relative;
+        left: -4px;
+        padding: 7px;
+        text-align: left;
+     }
+     .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+      
+      .switch input { 
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      
+      input:checked + .slider {
+        background-color: #2196F3;
+      }
+      .doctorid{
+        width: 305px;
+        padding: 6px;
+        margin-left: 32px;
+      }
+      
+      input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+      }
+      .time1{
+        position: relative;
+        left: 94px;
+        bottom: 25px;
+      }
+      .appointype{
+        position: relative;
+        top: 24px;
+        width: 305px;
+        padding: 3px;
+      }
+      .schedule{
+        position: relative;
+        top:14px ;
+      }
+      
+      input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+      
+      /* Rounded sliders */
+      .slider.round {
+        border-radius: 34px;
+      }
+      
+      .slider.round:before {
+        border-radius: 50%;
+      }
+     .form-control3{
+         width: 34px;
+     }
+     .btn2{
+        border-radius:  23px 23px 23px 23px;
+        width: 200px;
+        margin-left: 240px;
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: indigo;
+        margin-top: 20px;
+      }
+      .btn3{
+        border-radius:  23px 23px 23px 23px;
+        width: 200px;
+        margin-left: 30px;
+        margin-bottom: 70px;
+        padding: 12px;
+        background-color: rgb(0, 121, 130);
+      }
+      .leftsec div{
+        height: 100%;
+        width: auto;
+        padding: 0 10px 10px 10px;
+        margin-left: 34px;
+        
+      }
+      .container{
+        box-shadow: 1px 1px 10px 1px black;
+          
+          position: relative;
+          left: 80px;
+          top:35px
+      }
+      .header{
+          position: relative;
+          right: -158px;
+      }
+      .footer{
+          text-align: center;
+      }
+      .btn4{
+        width: 80% !important;
+        position: relative;
+        left: -4px;
+        padding: 7px;
+        text-align: left;
+
+      }
