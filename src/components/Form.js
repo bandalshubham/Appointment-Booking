@@ -3,11 +3,28 @@ import React, { useState }  from 'react';
 import "./Form.css";
 
 const Form=()=>{
+  var d=new Date();
+  let showdate=`${d.getDate()}-${d.getMonth()+1}-${d.getFullYear()}`
   
  const[Title ,setTitle]=useState("");
- const[AppointmentTime,setAppointmentTime]=useState("");
+ const[AppointmentDate ,setAppointmentDate]=useState("");
+ const[AppointmentTime,setAppointmentTime]=useState();
+ const[AppointmentChannel,setAppointmentChannel]=useState();
+ const[Address,setAddress]=useState("");
+ const[BookedDate,setBookedDate]=useState(showdate);
+ const[UserId,setUserId]=useState("810459219");
+ const[ClinicId,setClinicId]=useState("122990548");
+ const[DoctorId,setDoctorId]=useState("45346070");
+ 
+
+ const[city ,setcity]=useState("");
+ const[state ,setstate]=useState("");
+ const[country ,setcountry]=useState("");
+ const[Pincode ,setPincode]=useState("");
  const[AppointmentType,setAppointmentType]=useState("");
- const[Appointmentdoctor,setAppointmentdoctor]=useState("");
+ const[FirstName,setFirstName]=useState("");
+ const[LastName,setLastName]=useState("");
+ 
  const[Patient_BP,setPatient_BP]=useState("");
  const[Patient_Plus,setPatient_Plus]=useState("");
  const[Patient_SPO2,setPatient_SPO2]=useState("");
@@ -23,29 +40,22 @@ const Form=()=>{
  function saveUser(){
   
   
-   let data={Title,AppointmentTime,AppointmentType,Patient_BP,Patient_Plus,Patient_SPO2,Patient_Temp,
+   let data={UserId,ClinicId,DoctorId,Title,AppointmentDate,AppointmentTime,AppointmentStatus,AppointmentChannel,
+    AppointmentType, FirstName,LastName,BookedDate,city,state,Pincode,country, Patient_BP,Patient_Plus,Patient_SPO2,Patient_Temp,
     Patient_Weight,Patient_Height,ShortNote,PrescriptionNote}
-    var UserId=810459219;
-    var DoctorId=45346070;
-    var ClinicId=122990548;
-    var FirstName="jhon";
-    var LastName="wick";
-    var date=Date.now()
-    var AppointmentChannel="walk-in";
+   
+    var AppointmentStatus="active";
+    
+    var AppointmentChannel="yes";
+    data['AppointmentChannel']=AppointmentChannel;
+    // data['UserId']=UserId;
+    // data['ClinicId']=ClinicId;
+    // data['DoctorId']=DoctorId;
+    data['AppointmentStatus']=AppointmentStatus;
 
     
-    var AppointmentStatus="pending";
-    data["AppointmentChannel"]=AppointmentChannel;
-    data['FirstName']=FirstName;
-    data['LastName']=LastName;
-    data["AppointmentStatus"]=AppointmentStatus;
-    data["AppointmentDate"]=date;
-    data["UserId"]=UserId;
-    data["DoctorId"]=DoctorId;
-    data["ClinicId"]=ClinicId;
-    
    
-console.log(data);
+    console.log(data);
    fetch("http://13.233.217.107:8080/api/AddAppointment",{
    method:"POST",
    headers:{
@@ -59,6 +69,10 @@ console.log(data);
 
   }).then((result)=>{
     console.log("result",result);
+  })
+  .catch((res)=>{
+    res.json();
+    console.log(res);
   })
  }
   
@@ -96,48 +110,69 @@ console.log(data);
               <h3>Details</h3>
               <form>
                 <div class="form-group">
-                  <label for="exampleInputEmail1"></label>
-                  <input
-                    type="text"
-                    class="form-control" value={Title} name='Title' onChange={(e)=>setTitle(e.target.value)}
-                    placeholder="Appointment Title"
-                  />
+                <span className='title1'>Title</span>
+                  
+                  
+                    
+                  <form>
+                      <label for="birthdaytime"></label>
+                      <input type="text" className='Title' value={Title} name='Title' onChange={(e)=>setTitle(e.target.value)}  />
+                    
+           
+                        </form>
                 </div>
 
-                <div class="dropdown p-3">
-                  <button
-                    type="button"
-                    className="form-control1 dropdown-toggle border"
-                    data-bs-toggle="dropdown"
-                  >
-                    Appointment Channel
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        Link 1
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        Link 2
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        Link 3
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <select name="cars" id="cars" className='doctorid'>
-    <option value={Appointmentdoctor} name='Appointmentdoctor' onChange={(e)=>setAppointmentdoctor(e.target.value)}>dr peter parek</option>
-    <option value={Appointmentdoctor} name='Appointmentdoctor' onChange={(e)=>setAppointmentdoctor(e.target.value)}>dr william</option>
-    <option value={Appointmentdoctor} name='Appointmentdoctor' onChange={(e)=>setAppointmentdoctor(e.target.value)}>dr sethi dil</option>
-    <option value={Appointmentdoctor} name='Appointmentdoctor' onChange={(e)=>setAppointmentdoctor(e.target.value)}>dr markus stonics</option>
-  
-  </select>
+                <span className='date2'>AppointmentDate</span>
+                  
+                  
+                    
+                  <form>
+                      <label for="birthdaytime"></label>
+                      <input type="Date" className='date1' value={AppointmentDate} name='Address' onChange={(e)=>setAppointmentDate(e.target.value)}  />
+                    
+           
+                        </form>
+                        <span className='aptime'>AppointmentTime</span>
+                  
+                  
+                    
+                  <form>
+                      <label for="birthdaytime"></label>
+                      <input type="Time" className='aptime1' value={AppointmentTime} name='AppointmentTime' onChange={(e)=>setAppointmentTime(e.target.value)}  />
+                    
+           
+                        </form>
+                        <span className='user1'>UserId</span>
+                  
+                  
+                    
+                  <form>
+                      <label for="birthdaytime"></label>
+                      <input type="Number" className='userid' value={UserId} name='UserId' onChange={(e)=>setUserId(e.target.value)}  />
+                    
+           
+                        </form>
+                        <span className='doctor2'>DoctorId</span>
+                  
+                  
+                    
+                  <form>
+                      <label for="birthdaytime"></label>
+                      <input type="Number" className='doctori' value={DoctorId} name='DoctorId' onChange={(e)=>setDoctorId(e.target.value)}  />
+                    
+           
+                        </form>
+                        <span className='clinic1'>ClinicId</span>
+                  
+                  
+                    
+                  <form>
+                      <label for="birthdaytime"></label>
+                      <input type="Number" className='clinicid' value={ClinicId} name='ClinicId' onChange={(e)=>setClinicId(e.target.value)}  />
+                    
+           
+                        </form>
+                       
               </form>
             </section>
 
@@ -147,37 +182,76 @@ console.log(data);
               <div className='appoint'>
                 <h3>Appointment Details</h3>
                 <div class="row">
-                  <div class="col-6 col-md-3 col-lg-6">
-                    <p>John Wick</p>
+                  <div class="col-3 col-md-3 col-lg-6">
+                    <p className='first'>FirstName</p>
                   </div>
-                  <div class="col-6 col-md-3 col-lg-6">
-                    <p>810459219</p>
+                  <div class="col-3 col-md-3 col-lg-6">
+                    <input type="text" value={FirstName} name='FirstName' onChange={(e)=>setFirstName(e.target.value)} />
+                  </div>
+                  <div class="col-3 col-md-3 col-lg-6">
+                    <p className='lastname1'>LastName</p>
+                  </div>
+                  <div class="col-3 col-md-3 col-lg-6">
+                    <input type="text" value={LastName} name='LastName' onChange={(e)=>setLastName(e.target.value)} />
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-6 col-md-6 colp-lg-6">
-                    <p>Walk-in Appointment</p>
+                    <p className='chanel'>AppointmentChannel-Walk In</p>
                   </div>
                   <div class="col-6 col-md-6 colp-lg-6">
                   <label class="switch">
-                      <input type="checkbox"/>
+                      <input type="checkbox"  value={AppointmentChannel} name='LastName' onChange={(e)=>setAppointmentChannel(e.target.value)} />
                       <span class="slider round p-1">yes</span>
                     </label>
                   </div>
                   <div class="schedule">
-                    <span>Schedule</span>
+                    <span className='book2'>BookedDate</span>
                   
                   
                     
        <form>
            <label for="birthdaytime"></label>
-           <input type="datetime-local" className='time1' value={AppointmentTime} name='AppointmentTime' onChange={(e)=>setAppointmentTime(e.target.value)}  />
+           <input type="text" className='time10' value={BookedDate} name='CurrentDate' onChange={(e)=>setBookedDate(e.target.value)}  />
          
 
              </form>
+             <span className='addres'>Address</span>
+                  
+                  
+                    
+                  <form>
+                      <label for="birthdaytime"></label>
+                      <input type="text" className='time3' value={Address} name='Address' onChange={(e)=>setAddress(e.target.value)}  />
+                    <span className='country1'>Country</span>
+                    <label for="birthdaytime"></label>
+                      <input type="text" className='country2' value={country} name='state' onChange={(e)=>setcountry(e.target.value)}  />
+           
+                        </form>
+                        <span className='city1'>City</span>
+                  
+                  
+                    
+                  <form>
+                      <label for="birthdaytime"></label>
+                      <input type="text" className='time4' value={city} name='city' onChange={(e)=>setcity(e.target.value)}  />
+                  
+                   <span className='state1'>State</span>
+                    <label for="birthdaytime"></label>
+                      <input type="text" className='time5' value={state} name='state' onChange={(e)=>setstate(e.target.value)}  />
+                     
+                      <span className='state2'>Pincode</span>
+                   
+                   <label for="birthdaytime"></label>
+                      <input type="text" className='time6' value={Pincode} name='Pincode' onChange={(e)=>setPincode(e.target.value)}  />
+                      <span className='state10'>AppointmentType</span>
+                   
+                   <label for="birthdaytime"></label>
+                      <input type="text" className='appointype1' value={AppointmentType} name='AppointmentType'onChange={(e)=>setAppointmentType(e.target.value)}  />
+                        </form>
                   </div>
                   
-    <input value={AppointmentType} placeholder='Appointment Type' className='appointype' name='AppointmentType' onChange={(e)=>setAppointmentType(e.target.value)}/>
+  
     
   
   

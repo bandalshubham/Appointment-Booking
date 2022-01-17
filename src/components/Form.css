@@ -8,9 +8,163 @@
     
     
   }
+  .appointype1{
+    position: relative;
+    left: 45px;
+    top: -1px;
+   
+  }
+  .title1{
+    font-weight: bold;
+  }
+  .state10{
+    font-weight: bold;
+  }
+  .user1{
+    position: relative;
+    left: 46px;
+    font-weight: bold;
+  }
+  .userid{
+    position: relative;
+    left: 183px;
+    top: -25px;
+  }
+  .clinic1{
+    position: relative;
+    left: 46px;
+    font-weight: bold;
+  }
+  .clinicid{
+    position: relative;
+    left: 183px;
+    top: -25px;
+  }
+  .doctor2{
+    position: relative;
+    left: 46px;
+    font-weight: bold;
+  }
+  .doctori{
+    position: relative;
+    left: 180px;
+    top: -25px;
+    height: 30px;
+    width: 190px;
+  }
+  .time10{
+    position: relative;
+    left: 123px;
+    top: -25px;
+    width: 85px;
+    font-weight: bold;
+  
+  }
+  .country1{
+    position: relative;
+    left: 120px;
+    top: -25px;
+    font-weight: bold;
+  }
+  .addres{
+    font-weight: bold;
+  }
+  .city1{
+    font-weight: bold;
+  }
+  .country2{
+    position: relative;
+    left: 150px;
+    width: 96px;
+    top: -25px;
+    height: 24px;
+
+  }
+  .time3{
+    position:relative;
+    left: 80px;
+    top: -25px;
+    width: 107px;
+    height: 24px;
+  }
+  .time4{
+    position:relative;
+    left: 50px;
+    top: -25px;
+    width: 79px;
+    height: 24px;
+
+  }
+  .time5{
+    position:relative;
+    left: 80px;
+   width: 76px;
+   top: -25px;
+   height: 24px;
+  }
+  .time6{
+    position: relative;
+    left: 105px;
+    width: 56px;
+    top: -25px;
+    height: 24px;
+  }
+  .state2{
+    position: relative;
+    left:95px ;
+    top: -25px;
+    font-weight: bold;
+   
+  }
+  .state1{
+    position: relative;
+    left: 70px;
+    top: -25px ;
+    font-weight: bold;
+    height: 24px;
+  }
+  .date1{
+    position: relative;
+    left: 183px;
+    top: -25px ;
+    width: 198px;
+  }
+  .date2{
+    position: relative;
+    left: 45px;
+    font-weight: bold;
+  }
+  .Title{
+    position: relative;
+    left: 140px;
+    top: -25px;
+  }
+  .aptime{
+    position: relative;
+    left: 46px;
+    font-weight: bold;
+
+  }
+  .aptime1{
+    position: relative;
+    left: 185px;
+    top: -25px;
+  }
   .appoint{
     position: relative;
     left: 285px;
+  }
+  .first{
+    font-weight: bold;
+  }
+  .book2{
+    font-weight: bold;
+  }
+  .lastname1{
+    font-weight: bold;
+  }
+  .chanel{
+    font-weight: bold;
   }
  
   .icons1{
